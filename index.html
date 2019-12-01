@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="icon.png">
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <title>Notes</title>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Notes</span>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active" id="spinner"></div>
+                <dialog class="mdl-dialog">
+                    <h4 class="mdl-dialog__title">Neue Notiz</h4>
+                    <div class="mdl-dialog__content">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="noteTitle" pattern="[A-Z,a-z,0-9, ]*">
+                            <label class="mdl-textfield__label" for="noteTitle">Titel</label>
+                            <span class="mdl-textfield__error">Nur Buchstaben und Nummern</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <textarea class="mdl-textfield__input" type="text" id="noteText" rows="2" pattern="[A-Z,a-z,0-9, ]*"></textarea>
+                            <label class="mdl-textfield__label" for="noteText">Notiz</label>
+                            <span class="mdl-textfield__error">Nur Buchstaben und Nummern</span>
+                        </div>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="save">Speichern</button>
+                        <button type="button" class="mdl-button close">Abbrechen</button>
+                    </div>
+                </dialog>
+            </div>
+        </main>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show-dialog">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
